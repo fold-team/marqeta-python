@@ -16,7 +16,7 @@ DATE_FORMATS = [
 
 def datetime_object(key, json_response):
     if key in json_response:
-        match = re.match("\d{4}[-/]\d{2}[-/]\d{2}$", json_response[key])
+        match = re.match(r"\d{4}[-/]\d{2}[-/]\d{2}$", json_response[key])
         if match:
             return datetime.strptime(json_response[key], "%Y-%m-%d").date()
         else:
